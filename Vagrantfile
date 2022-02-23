@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
     config.vm.box = "bento/ubuntu-20.04"
 	config.vm.box_version = "202112.19.0"
 	config.ssh.forward_agent = true
+    config.vm.boot_timeout = 600
     config.vm.define "kubeadm-ubuntu20-master" do |node|
         node.vm.provider "virtualbox" do |vb|
             vb.name = "kubeadm-ubuntu20-master"
